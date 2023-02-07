@@ -16,7 +16,7 @@ android {
     ndkVersion = ndkSideBySideVersion
     compileSdkVersion(30)
     defaultConfig {
-        minSdkVersion(24)
+        minSdkVersion(19)
         targetSdkVersion(30)
         applicationId = "io.urho3d.launcher"
         versionCode = 1

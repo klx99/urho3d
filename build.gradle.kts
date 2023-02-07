@@ -40,6 +40,7 @@ allprojects {
             set("ndkSideBySideVersion", "21.3.6528147")
             set("cmakeVersion", "3.17.3+")
             set("buildStagingDir", ".cxx")
+            set("ANDROID_ABI", "armeabi-v7a,arm64-v8a")
         }
     }
 }

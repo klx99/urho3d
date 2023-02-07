@@ -53,7 +53,7 @@ static i32 FSeek64(FILE* stream, i64 offset, i32 origin)
 #elif defined(__APPLE__)
     return fseeko(stream, offset, origin);
 #else
-    return fseeko64(stream, offset, origin);
+    return fseeko(stream, offset, origin);
 #endif
 }
 
@@ -64,7 +64,7 @@ static i64 FTell64(FILE* stream)
 #elif defined(__APPLE__)
     return ftello(stream);
 #else
-    return ftello64(stream);
+    return ftello(stream);
 #endif
 }
 
@@ -486,7 +486,7 @@ bool File::OpenInternal(const String& fileName, FileMode mode, bool fromPackage)
 #elif defined(__APPLE__)
     handle_ = fopen(GetNativePath(fileName).CString(), openMode[mode]);
 #else
-    handle_ = fopen64(GetNativePath(fileName).CString(), openMode[mode]);
+    handle_ = fopen(GetNativePath(fileName).CString(), openMode[mode]);
 #endif
 
     // If file did not exist in readwrite mode, retry with write-update mode
@@ -497,7 +497,7 @@ bool File::OpenInternal(const String& fileName, FileMode mode, bool fromPackage)
 #elif defined(__APPLE__)
         handle_ = fopen(GetNativePath(fileName).CString(), openMode[mode + 1]);
 #else
-        handle_ = fopen64(GetNativePath(fileName).CString(), openMode[mode + 1]);
+        handle_ = fopen(GetNativePath(fileName).CString(), openMode[mode + 1]);
 #endif
     }
 

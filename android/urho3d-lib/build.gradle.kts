@@ -21,7 +21,7 @@ android {
     ndkVersion = ndkSideBySideVersion
     compileSdkVersion(30)
     defaultConfig {
-        minSdkVersion(24)
+        minSdkVersion(19)
         targetSdkVersion(30)
         versionCode = 1
         versionName = project.version.toString()
